@@ -1,5 +1,7 @@
 from requests import get
 
+__version__ = '0.0.2'
+
 def cnpjinfo(cnpj):
     """Get cnpj information via scraping from the cnpj.info website."""
 
