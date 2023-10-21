@@ -13,7 +13,3 @@ def cnpjinfo(cnpj):
         data = None
     
     return data
-
-
-if __name__ == "__main__":
-    ...
