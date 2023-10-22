@@ -41,4 +41,6 @@ foo@bar:~$
 
 ## Upgrade
 
+```bash
 - Run `pip install cnpjinfo --upgrade`
+```
