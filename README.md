@@ -19,22 +19,24 @@ from cnpjinfo import cnpjinfo, cnpjinfo_list
 info = cnpjinfo('12345678901234')
 nome = info.get('nome')
 tel = info.get('telefone')
-print (f'Nome: {nome}, Tel: {tel}'))
+email = info.get('email')
+print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
 
 # For CNPJ list
 cnpj_list = [ "05720854000166", "00623904000173", "15436940000103" ]
 result = cnpjinfo_list(cnpj_list)
 for cnpj in result:
-    info = cnpjinfo('12345678901234')
+    info = cnpjinfo(cnpj)
     nome = info.get('nome')
     tel = info.get('telefone')
-    print (f'Nome: {nome}, Tel: {tel}'))
+    email = info.get('email')
+    print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
 ```
 
 ### console output
 
 ```bash
-foo@bar:~$ ./myscript.py
+foo@bar:~$ python myscript.py
 Nome: COMPANY NAME., Tel: (11) 1111-1111
 foo@bar:~$ 
 ```
@@ -42,5 +44,5 @@ foo@bar:~$
 ## Upgrade
 
 ```bash
-- Run `pip install cnpjinfo --upgrade`
+foo@bar:~$ Run `pip install cnpjinfo --upgrade`
 ```
