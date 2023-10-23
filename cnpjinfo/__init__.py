@@ -1,5 +1,7 @@
+import csv
 import json
 import logging
+import sys
 from requests import get
 
 __version__ = '0.0.3'
@@ -52,4 +54,31 @@ def cnpjinfo_list(cnpj_list: list, retry=3):
         cnpj_data = cnpjinfo(cnpj, retry=retry)
         cnpj_list_out.append(cnpj_data)
 
+    return cnpj_list_out
+
+def cnpjinfo_csv(file_path: str, retry=3):
+    """
+    Process a csv file of CNPJs (Cadastro Nacional da Pessoa Jurídica) and retrieve information for each CNPJ.
+
+    Args:
+        file_path (str): A file csv with list of CNPJs represented as strings.
+
+    Returns:
+        list: A list containing information for each CNPJ provided in the input list.
+    """
+
+    cnpj_list_out = []
+
+    try:
+        with open(file_path, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            for line in csv_reader:
+                cnpj = line[0]
+                cnpj_data = cnpjinfo(cnpj, retry=retry)
+                cnpj_list_out.append(cnpj_data)
+    except FileNotFoundError:
+        print(f'File {file_path} not find.')
+    except Exception as e:
+        print(f'Error: {e}')
+    
     return cnpj_list_out
