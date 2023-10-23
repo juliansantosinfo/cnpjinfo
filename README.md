@@ -22,9 +22,18 @@ tel = info.get('telefone')
 email = info.get('email')
 print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
 
-# For CNPJ list
+# For CNPJ's in list
 cnpj_list = [ "05720854000166", "00623904000173", "15436940000103" ]
 result = cnpjinfo_list(cnpj_list)
+for cnpj in result:
+    nome = cnpj.get('nome')
+    tel = cnpj.get('telefone')
+    email = cnpj.get('email')
+    print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
+
+# For CNPJ's in csv file
+csv_file = "/home/your_user/cnpjs.csv"
+result = cnpjinfo_csv(csv_file)
 for cnpj in result:
     nome = cnpj.get('nome')
     tel = cnpj.get('telefone')
@@ -43,5 +52,5 @@ foo@bar:~$
 ## Upgrade
 
 ```bash
-foo@bar:~$ Run `pip install cnpjinfo --upgrade`
+foo@bar:~$ pip install cnpjinfo --upgrade
 ```
