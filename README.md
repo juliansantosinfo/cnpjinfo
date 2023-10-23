@@ -13,7 +13,7 @@
 ## Exxemple
 
 ```python
-from cnpjinfo import cnpjinfo
+from cnpjinfo import cnpjinfo, cnpjinfo_list
 
 # For one CNPJ
 info = cnpjinfo('12345678901234')
