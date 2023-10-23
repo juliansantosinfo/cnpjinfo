@@ -26,10 +26,9 @@ print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
 cnpj_list = [ "05720854000166", "00623904000173", "15436940000103" ]
 result = cnpjinfo_list(cnpj_list)
 for cnpj in result:
-    info = cnpjinfo(cnpj)
-    nome = info.get('nome')
-    tel = info.get('telefone')
-    email = info.get('email')
+    nome = cnpj.get('nome')
+    tel = cnpj.get('telefone')
+    email = cnpj.get('email')
     print (f'Nome: {nome}, Tel: {tel}, e-Mail: {email}'))
 ```
 
